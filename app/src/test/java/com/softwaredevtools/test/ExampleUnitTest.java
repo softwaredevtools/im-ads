@@ -1,4 +1,4 @@
-package com.softwaredevtools.imads;
+package com.softwaredevtools.test;
 
 import org.junit.Test;
 

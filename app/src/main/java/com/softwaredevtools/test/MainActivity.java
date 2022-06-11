@@ -1,19 +1,16 @@
-package com.softwaredevtools.imads;
+package com.softwaredevtools.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.util.LogPrinter;
 
-import java.net.InterfaceAddress;
-
-public class App extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app);
+        setContentView(R.layout.ActivityMain);
 
 
         Log.i("ads","log test app");
