@@ -23,7 +23,7 @@ public class ImInterstitial {
     public static int COUNTER;
 
 
-    public static void loadImAds(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup) {
+    public static void loadAds(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup) {
 
         interstitialAd = new MaxInterstitialAd(idIntertitial, activity);
         interstitialAd.loadAd();
@@ -36,18 +36,18 @@ public class ImInterstitial {
     }
 
 
-    public static void ShowImAds(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup, int INTERVAL) {
+    public static void ShowAds(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup, int INTERVAL) {
         if (COUNTER >= INTERVAL) {
             if (interstitialAd.isReady()) {
                 interstitialAd.showAd();
-                loadImAds(activity, selectAdsBackup, idIntertitial, idIntertitialBackup);
+                loadAds(activity, selectAdsBackup, idIntertitial, idIntertitialBackup);
             } else {
                 switch (selectAdsBackup) {
                     case "STARTAPP":
                         StartAppAd.showAd(activity);
                         Log.i("ads log","ads show StartApp");
 
-                    loadImAds(activity, selectAdsBackup, idIntertitial, idIntertitialBackup);
+                    loadAds(activity, selectAdsBackup, idIntertitial, idIntertitialBackup);
                     interstitialAd.loadAd();
                 }
                 COUNTER = 0;
