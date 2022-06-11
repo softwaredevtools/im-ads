@@ -2,7 +2,12 @@ package com.softwaredevtools.imads;
 
 
 import android.app.Activity;
+import android.app.Application;
 import android.util.Log;
+
+import com.applovin.mediation.MaxAd;
+import com.applovin.mediation.MaxAdListener;
+import com.applovin.mediation.MaxError;
 import com.applovin.mediation.ads.MaxInterstitialAd;
 import com.startapp.sdk.adsbase.StartAppAd;
 
@@ -12,12 +17,13 @@ public class ImInterstitial {
     public static int COUNTER;
 
 
-    public static void loadAds(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup) {
+    public static void loadAds(Activity activity, String MaxInter, String AdsBackup, String InterBackup) {
 
-        interstitialAd = new MaxInterstitialAd(idIntertitial, activity);
+        interstitialAd = new MaxInterstitialAd(MaxInter, activity);
         interstitialAd.loadAd();
 
-        switch (selectAdsBackup) {
+
+        switch (AdsBackup) {
             case "STARTAPP":
                 //panggil kode interstiital startapp disini
 
@@ -25,24 +31,23 @@ public class ImInterstitial {
     }
 
 
-    public static void ShowAds(Activity activity, String selectAdsBackup, String idIntertitial, String idIntertitialBackup, int INTERVAL) {
-        if (COUNTER >= INTERVAL) {
+    public static void ShowAds(Activity activity, String AdsBackup, String MaxInter, String BackupInter, int Interval) {
+        if (COUNTER >= Interval) {
             if (interstitialAd.isReady()) {
                 interstitialAd.showAd();
-                loadAds(activity, selectAdsBackup, idIntertitial, idIntertitialBackup);
+               Log.i("ads log","ads show Max");
             } else {
-                switch (selectAdsBackup) {
+                switch (AdsBackup) {
                     case "STARTAPP":
                         StartAppAd.showAd(activity);
                         Log.i("ads log","ads show StartApp");
-
-                    loadAds(activity, selectAdsBackup, idIntertitial, idIntertitialBackup);
-                    interstitialAd.loadAd();
                 }
+                loadAds(activity, AdsBackup, MaxInter, BackupInter);
                 COUNTER = 0;
             }
 
         } else
             COUNTER++;
     }
+
 }
