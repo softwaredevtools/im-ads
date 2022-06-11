@@ -1,20 +1,9 @@
 package com.softwaredevtools.imads;
 
-import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.util.Log;
-
-import androidx.annotation.NonNull;
-
-import com.applovin.adview.AppLovinInterstitialAd;
 import com.applovin.mediation.ads.MaxInterstitialAd;
-import com.applovin.sdk.AppLovinAd;
-import com.applovin.sdk.AppLovinAdLoadListener;
-import com.applovin.sdk.AppLovinAdSize;
-import com.applovin.sdk.AppLovinSdk;
-import com.ironsource.mediationsdk.IronSource;
 import com.startapp.sdk.adsbase.StartAppAd;
 
 public class ImInterstitial {
