@@ -15,7 +15,7 @@ public class App extends AppCompatActivity {
         setContentView(R.layout.activity_app);
 
 
-        Log.i("ads","log");
+        Log.i("ads","log test");
 
     }
 }
