@@ -17,7 +17,9 @@ public class MyApplication extends Application implements MaxAdListener {
             AppLovinSdk.getInstance(MyApplication.this).setMediationProvider(AppLovinMediationProvider.MAX);
             AppLovinSdk.getInstance(MyApplication.this).initializeSdk(config -> {
 
-            }); AppLovinSdk.getInstance( this ).showMediationDebugger();
+            });
+            //check mediation adapter
+            // AppLovinSdk.getInstance( this ).showMediationDebugger();
         }
 
     @Override
