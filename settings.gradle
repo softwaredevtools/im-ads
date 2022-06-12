@@ -10,6 +10,6 @@ dependencyResolutionManagement {
         maven { url "https://android-sdk.is.com" }
     }
 }
-rootProject.name = "ImAds"
+rootProject.name = "ImSdkAds"
 include ':app'
 include ':ImAds'
