@@ -1,16 +1,4 @@
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
-        mavenCentral()
-        maven { url "https://artifact.bytedance.com/repository/pangle" }
-        maven { url "https://sdk.tapjoy.com" }
-        maven {url 'https://android-sdk.is.com/'}
-         maven { url 'https://jitpack.io' }
-    }
-}
+
 rootProject.name = "ImSdkAds"
 include ':app'
 include ':ImAds'
